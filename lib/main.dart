@@ -12,8 +12,7 @@ void main() async {
     Logger.i('Launching application...');
     WidgetsFlutterBinding.ensureInitialized();
 
-    await ConfigLoader.init();
-    final configuration = ConfigLoader.load();
+    final configuration = await ConfigLoader.load();
     registerDependencies(configuration);
 
     FlutterError.onError = (FlutterErrorDetails details) {

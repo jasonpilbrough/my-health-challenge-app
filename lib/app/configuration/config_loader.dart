@@ -6,12 +6,10 @@ class ConfigLoader {
   static const String _appSettingsLocation = "assets/config/appsettings.json";
   static const String _secretsLocation = "assets/config/secrets.json";
 
-  static Future<void> init() async {
+  static Future<Configuration> load() async {
     await GlobalConfiguration().loadFromPath(_appSettingsLocation);
     await GlobalConfiguration().loadFromPath(_secretsLocation);
-  }
 
-  static Configuration load() {
     Logger.i("Fetching local configuration...");
     return Configuration(
       apiKey: _getValue<String>(Configuration.apiKeyKey),
