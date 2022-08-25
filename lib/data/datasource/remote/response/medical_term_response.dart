@@ -36,7 +36,7 @@ class MedicalTermContextResponse {
 
 @JsonSerializable()
 class MedicalTermClassificationResponse {
-  String main;
+  String? main;
 
   MedicalTermClassificationResponse(this.main);
 

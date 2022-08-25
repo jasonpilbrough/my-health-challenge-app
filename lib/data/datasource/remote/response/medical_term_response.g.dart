@@ -42,7 +42,7 @@ Map<String, dynamic> _$MedicalTermContextResponseToJson(
 MedicalTermClassificationResponse _$MedicalTermClassificationResponseFromJson(
         Map<String, dynamic> json) =>
     MedicalTermClassificationResponse(
-      json['main'] as String,
+      json['main'] as String?,
     );
 
 Map<String, dynamic> _$MedicalTermClassificationResponseToJson(

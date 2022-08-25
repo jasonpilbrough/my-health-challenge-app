@@ -13,7 +13,7 @@ class MedicalTermRemoteMapper
     String unknown = StringConstants.kUnknown.toLowerCase();
     return MedicalTermModel(
       response.label,
-      response.classification.main,
+      response.classification.main ?? unknown,
       response.contexts.firstOrNull?.type ?? unknown,
       response.contexts.firstOrNull?.subtype ?? unknown,
     );
