@@ -51,31 +51,33 @@ class _CaptureScreenState extends State<CaptureScreen> {
     return AppScaffold(
         appBarTitle: StringConstants.kHealth,
         persistentFooterButtons: _footerButtons(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              StringConstants.kImageUploadMethod,
-              style: Theme.of(context).textTheme.headline5,
-            ),
-            const SizedBox(
-              height: DimenConstants.kSpacer16,
-            ),
-            SelectableListTile(
-              label: StringConstants.kSelectFromGallery,
-              icon: Icons.image,
-              onTap: () => pickImage(ImageSource.gallery),
-            ),
-            SelectableListTile(
-              label: StringConstants.kScanWithCamera,
-              icon: Icons.camera_alt,
-              onTap: () => pickImage(ImageSource.camera),
-            ),
-            const SizedBox(
-              height: DimenConstants.kSpacer16,
-            ),
-            ImagePreview(image: selectedImage),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                StringConstants.kImageUploadMethod,
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              const SizedBox(
+                height: DimenConstants.kSpacer16,
+              ),
+              SelectableListTile(
+                label: StringConstants.kSelectFromGallery,
+                icon: Icons.image,
+                onTap: () => pickImage(ImageSource.gallery),
+              ),
+              SelectableListTile(
+                label: StringConstants.kScanWithCamera,
+                icon: Icons.camera_alt,
+                onTap: () => pickImage(ImageSource.camera),
+              ),
+              const SizedBox(
+                height: DimenConstants.kSpacer16,
+              ),
+              ImagePreview(image: selectedImage),
+            ],
+          ),
         ));
   }
 
